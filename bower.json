@@ -1,0 +1,37 @@
+{
+  "name": "jquery-sortable-bygiro",
+  "version": "v0.0.1",
+  "authors": [
+    "G. Tomaselli <girotomaselli@gmail.com>"
+  ],
+  "contributors": [],
+  "main": [
+	"dist/jquery.sortable.bygiro.js",
+	"dist/jquery.sortable.bygiro.min.js"
+  ],
+  "description": "jQuery plugin to drag'n'drop and sort elements within a container or multiple nested containers",
+  "keywords": [
+    "jQuery",
+    "nested lists",
+    "ByGiro",
+    "sortable",
+    "sorting",
+    "drag'n'drop"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.x",
+    "bootstrap": ">=2.3.x"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.21.4"
+  }
+}

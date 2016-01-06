@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery Sortable ByGiro demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../dist/jquery.sortable.bygiro.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .map {
+        height: 300px;
+      }
+      .map img {
+        max-width: none;
+      }
+      @media (max-width: 767px) {
+        .affix {
+          position: static;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 979px) {
+        .form-horizontal .control-label {
+          width: 80px;
+        }
+        .form-horizontal .controls {
+          margin-left: 100px;
+        }
+      }
+	  
+	  .bg-dragging {
+		opacity: 0.5;
+	  }
+	  
+	  .testone {
+		border: 1px solid;
+	  }
+	  
+	/*
+	.placeholder{
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-top-colors: none;
+		border-color: transparent -moz-use-text-color transparent red;
+		border-image: none;
+		border-style: solid none solid solid;
+		border-width: 5px medium 5px 5px;
+		content: "";
+		height: 0;
+		left: -5px;
+		margin-top: -5px;
+		position: relative;
+		top: 4px;
+		width: 0;
+		list-style: none;
+	}
+	*/
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="row-fluid">
+			<h1>jQuery plugin: Sortable ByGiro</h1>
+			<p>It needs jQuery or jQLite</p>
+			<div class="span6 col-md-6">
+				<ul class="mySortableList">
+					<li>
+						<span class="my-handle">o</span> Peter Griffin
+						<ul class="mySortableList sublist">
+							<li><span class="my-handle">o</span> Lois</li>
+							<li><span class="my-handle">o</span> Brian</li>
+							<li><span class="my-handle">o</span> Stevie</li>
+							<li><span class="my-handle">o</span> Meg</li>
+							<li>
+								<span class="my-handle">o</span> Chris
+								<ul class="pippopippo mySortableList sublist">
+									<li><span class="my-handle">o</span> Meg</li>
+								</ul>
+							</li>
+						</ul>					
+					</li>
+					<li><span class="my-handle">o</span> Jan Solo</li>
+					<li><span class="my-handle">o</span> Spiderman</li>
+					<li>
+						<span class="my-handle">o</span> Donald Duck
+						<ul class="mySortableList sublist"></ul>
+					</li>
+					<li><span class="my-handle">o</span> Bart Simpson</li>
+					<li>
+						<span class="my-handle">o</span> Clark Kent					
+					</li>
+				</ul>
+			</div>
+			<div class="span6 col-md-6">
+				<ul class="mySortableList2">
+					<li>
+						<span class="my-handle">o</span> Peter Griffin
+						<ul class="mySortableList2 sublist">
+							<li><span class="my-handle">o</span> Lois</li>
+							<li><span class="my-handle">o</span> Brian</li>
+							<li><span class="my-handle">o</span> Stevie</li>
+							<li><span class="my-handle">o</span> Meg</li>
+							<li><span class="my-handle">o</span> Chris</li>
+						</ul>					
+					</li>
+					<li><span class="my-handle">o</span> Jan Solo</li>
+					<li><span class="my-handle">o</span> Spiderman</li>
+					<li>
+						<span class="my-handle">o</span> Donald Duck
+						<ul class="mySortableList2 sublist"></ul>
+					</li>
+					<li><span class="my-handle">o</span> Bart Simpson</li>
+					<li>
+						<span class="my-handle">o</span> Clark Kent					
+					</li>
+				</ul>
+			</div>
+        </div><!--/span-->
+ <script>
+            $('.mySortableList').sortableByGiro({
+				drag: '.mySortableList2, .mySortableList',
+				clone: true,
+				drop: false,
+				onDragstart: function(item){
+					return true;
+				}
+            });
+            $('.mySortableList2').sortableByGiro({
+				drag: '.mySortableList2, .mySortableList3',
+				drop: '.pippopippo, .mySortableList',
+				onDragstart: function(item){
+					return true;
+				}
+            });
+        </script>
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+
+</body>
+</html>
